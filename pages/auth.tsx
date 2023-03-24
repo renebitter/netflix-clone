@@ -1,4 +1,6 @@
 import { useCallback, useState } from 'react';
+import { signIn } from 'next-auth/react';
+import axios from 'axios';
 import Input from '@/components/Input';
 
 const Auth = () => {
@@ -12,6 +14,32 @@ const Auth = () => {
     setVariant((currenVariant) =>
       currenVariant === 'login' ? 'register' : 'login'
     );
+  }, []);
+
+  const register = useCallback(async () => {
+    try {
+      await axios.post('/api/register', {
+        email,
+        name,
+        password,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }, [email, name, password]);
+
+  const login = useCallback(async () => {
+    console.log('login');
+    try {
+      await signIn('credentials', {
+        email,
+        password,
+        redirect: false,
+        callbackUrl: '/',
+      });
+    } catch (error) {
+      console.log(error);
+    }
   }, []);
 
   return (
@@ -56,6 +84,7 @@ const Auth = () => {
               />
             </div>
             <button
+              onClick={variant === 'login' ? login : register}
               className='
                 bg-red-600
                 py-3
