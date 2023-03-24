@@ -29,7 +29,6 @@ const Auth = () => {
   }, [email, name, password]);
 
   const login = useCallback(async () => {
-    console.log('login');
     try {
       await signIn('credentials', {
         email,
@@ -40,7 +39,7 @@ const Auth = () => {
     } catch (error) {
       console.log(error);
     }
-  }, []);
+  }, [email, password]);
 
   return (
     <div className='relative h-full w-full bg-[url("/images/hero.jpg")] bg-no-repeat bg-center bg-fixed bg-cover'>
