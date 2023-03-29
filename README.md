@@ -9,6 +9,7 @@ React, Next.js, Typescript, Tailwind, Prisma, MongoDB, Next-Auth, SWR, bcrypt, a
 - Add Dummy Login
 - Fix login issues (OAuth, login error message with empty creds., mongodb)
 - Finish diagram
+- Move index content to component (Input: rename to Auth.)
 - Replace lodash with vanilla JS (isEmpty, without)
 - Navbar: window.onscroll instead of addEventListener?
 - Replace axios with fetch or vice-versa
