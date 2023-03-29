@@ -11,7 +11,6 @@ export default async function handler(
   }
 
   try {
-    console.log('random');
     await serverAuth(req);
     const movieCount = await prisma.movie.count();
     const randomIndex = Math.floor(Math.random() * movieCount);

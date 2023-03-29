@@ -1,4 +1,5 @@
 import { BsFillPlayFill } from 'react-icons/bs';
+import FavoriteButton from './FavoriteButton';
 
 // TODO: Mobile version
 
@@ -9,8 +10,6 @@ interface MovieCardProps {
 const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
   const { thumbnailUrl, title, description, duration, genre, id, videoUrl } =
     data;
-
-  console.log(data);
 
   return (
     <div className='group bg-zinc-900 col-span relative h-[12vw]'>
@@ -94,6 +93,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
                 '>
               <BsFillPlayFill size={30} />
             </div>
+            <FavoriteButton movieId={data?.id} />
           </div>
           <p className='text-green-400 font-semibold mt-4'>
             New <span className='text-white'>2023</span>
