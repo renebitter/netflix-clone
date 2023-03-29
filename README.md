@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Live at [netflix-clone-tau-lemon.vercel.app](https://netflix-clone-tau-lemon.vercel.app/).
 
 ## Netflix Clone
 
@@ -7,6 +7,7 @@ React, Next.js, Typescript, Tailwind, Prisma, MongoDB, Next-Auth, SWR, bcrypt, a
 ### TODOS:
 
 - Add Dummy Login
+- Fix login issues (OAuth, login error message with empty creds., mongodb)
 - Finish diagram
 - Replace lodash with vanilla JS (isEmpty, without)
 - Navbar: window.onscroll instead of addEventListener?
