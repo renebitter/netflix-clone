@@ -3,7 +3,7 @@ import { AiOutlineInfoCircle } from 'react-icons/ai';
 
 const Billboard: React.FC = () => {
   const { data } = useBillboard();
-  console.log(data);
+
   //h-[56.25vw] = 16:9 aspect ratio
   return (
     <div className='relative h-[56.25vw]'>
