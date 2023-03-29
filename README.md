@@ -6,6 +6,7 @@ React, Next.js, Typescript, Tailwind, Prisma, MongoDB, Next-Auth, SWR, bcrypt, a
 
 ### TODOS:
 
+- Add Dummy Login
 - Finish diagram
 - Replace lodash with vanilla JS (isEmpty, without)
 - Navbar: window.onscroll instead of addEventListener?
