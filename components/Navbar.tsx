@@ -1,5 +1,10 @@
 import { useState, useCallback, useEffect } from 'react';
-import { BsChevronDown, BsSearch, BsBell } from 'react-icons/bs';
+import {
+  BsChevronDown,
+  BsCaretDownFill,
+  BsSearch,
+  BsBell,
+} from 'react-icons/bs';
 import NavbarItem from './NavbarItem';
 import MobileMenu from './MobileMenu';
 import AccountMenu from './AccountMenu';
@@ -79,7 +84,7 @@ const Navbar = () => {
         </div>
 
         <div
-          onClick={toggleMobileMenu} //TODO: should be onHover
+          onClick={toggleMobileMenu} //TODO: should be onHover onMouseEnter/onMouseLeave or just CSS
           className='lg:hidden flex flex-row items-center gap-2 ml-8 cursor-pointer relative'>
           <p className='text-white text-sm'>Browse</p>
           <BsChevronDown className='text-white transition' />
@@ -94,12 +99,13 @@ const Navbar = () => {
             <BsBell />
           </div>
           <div
-            onClick={toggleAccountMenu} //TODO: should be onHover
+            onClick={toggleAccountMenu} //TODO: should be onHover onMouseEnter/onMouseLeave or just CSS
             className='flex flex-row items-center gap-2 cursor-pointer relative'>
-            <div className='w-6 h-6 lg:w-10 lg:h-10 rounded-md overflow-hidden'>
+            <div className='w-6 h-6 lg:w-7 lg:h-7 rounded-md overflow-hidden'>
               <img src='/images/profile-pic.jpg' alt='profile-pic' />
             </div>
-            <BsChevronDown
+            <BsCaretDownFill
+              size={11}
               className={`text-white transition ${
                 showAccountMenu ? 'rotate-180' : 'rotate-0'
               }`}
