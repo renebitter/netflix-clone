@@ -1,5 +1,8 @@
-import { BsFillPlayFill } from 'react-icons/bs';
+import { useCallback } from 'react';
+import { useRouter } from 'next/router';
 import FavoriteButton from './FavoriteButton';
+
+import { BsFillPlayFill } from 'react-icons/bs';
 
 // TODO: Mobile version
 
@@ -10,10 +13,19 @@ interface MovieCardProps {
 const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
   const { thumbnailUrl, title, description, duration, genre, id, videoUrl } =
     data;
+  const router = useRouter();
+
+  const redirectToWatch = useCallback(
+    () => router.push(`/watch/${data?.id}`),
+    [router, data.id]
+  );
+
+  //TODO: Add video preview on hover
 
   return (
     <div className='group bg-zinc-900 col-span relative h-[12vw]'>
       <img
+        onClick={redirectToWatch}
         src={thumbnailUrl}
         alt={title}
         className='
@@ -49,6 +61,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
         group-hover:opacity-100
       '>
         <img
+          onClick={redirectToWatch}
           src={thumbnailUrl}
           alt={title}
           className='
@@ -76,7 +89,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
         '>
           <div className='flex flex-row items-center gap-3'>
             <div
-              onClick={() => {}}
+              onClick={redirectToWatch}
               className='
                 cursor-pointer
                 w-6
