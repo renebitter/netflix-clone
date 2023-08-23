@@ -117,7 +117,7 @@ const Auth = () => {
               {variant === 'login' ? 'Sign in' : 'Register'}
             </button>
             <p className='text-neutral-500 text-center mt-12'>
-              Can't be bothered?
+              Can&apos;t be bothered?
               <br />
               Just login as a dummy user:
             </p>
