@@ -98,7 +98,7 @@ const Auth = () => {
               {variant === 'login' ? 'Sign in' : 'Register'}
             </button>
 
-            <div
+            {/* <div
               className='
                 flex
                 flex-row
@@ -139,7 +139,7 @@ const Auth = () => {
                 '>
                 <FaGithub size={30} />
               </div>
-            </div>
+            </div> */}
 
             <p className='text-neutral-500 mt-12'>
               {variant === 'login'
