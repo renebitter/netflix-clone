@@ -1,4 +1,4 @@
-Live at [netflix-clone-tau-lemon.vercel.app](https://netflix-clone-tau-lemon.vercel.app/).
+Live at [https://flixnet-1234.vercel.app/](https://flixnet-1234.vercel.app/).
 
 ## Netflix Clone
 
