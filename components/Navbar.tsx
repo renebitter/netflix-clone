@@ -66,7 +66,7 @@ const Navbar = () => {
         duration-500
         ${showBackground ? 'bg-zinc-900/90' : ''}
       `}>
-        <img className='h-3 lg:h-7' src='/images/logo.png' alt='Logo' />
+        <h1 className='h-12 text-red-600 text-5xl font-bold'>FLIXNET</h1>
         <div
           className='
             flex-row

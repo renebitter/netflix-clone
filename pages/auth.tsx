@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useState, useEffect } from 'react';
 import { signIn } from 'next-auth/react';
 import { FcGoogle } from 'react-icons/fc';
 import { FaGithub } from 'react-icons/fa';
@@ -30,6 +30,24 @@ const Auth = () => {
     }
   }, [email, password]);
 
+  const dummyLogin = useCallback(async () => {
+    try {
+      await signIn('credentials', {
+        email: process.env.NEXT_PUBLIC_DUMMY_USER,
+        password: process.env.NEXT_PUBLIC_DUMMY_PASSWORD,
+        callbackUrl: '/profiles',
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
+  // const dummyLogin = () => {
+  //   setEmail('dummy@dummy.com');
+  //   setPassword('2234r234rfadsfvvcasdfg');
+  //   dummyCallback();
+  // };
+
   const register = useCallback(async () => {
     try {
       await axios.post('/api/register', {
@@ -47,7 +65,8 @@ const Auth = () => {
     <div className='relative h-full w-full bg-[url("/images/hero.jpg")] bg-no-repeat bg-center bg-fixed bg-cover'>
       <div className='bg-black w-full h-full bg-opacity-50'>
         <nav className='px-12 py-5'>
-          <img src='/images/logo.png' alt='logo' className='h-12' />
+          {/* <img src='/images/logo.png' alt='logo' className='h-12' />*/}
+          <h1 className='h-12 text-red-600 text-5xl font-bold'>FLIXNET</h1>
         </nav>
         <div className='flex justify-center'>
           <div className='bg-black bg-opacity-70 px-16 py-16 self-center mt-2 md:w-2/5 lg:max-w-md rounded-md w-full'>
@@ -96,6 +115,24 @@ const Auth = () => {
                 hover:bg-red-700
                 transition'>
               {variant === 'login' ? 'Sign in' : 'Register'}
+            </button>
+            <p className='text-neutral-500 text-center mt-12'>
+              Can't be bothered?
+              <br />
+              Just login as a dummy user:
+            </p>
+            <button
+              onClick={dummyLogin}
+              className='
+                bg-green-600
+                py-3
+                text-white
+                rounded-md
+                w-full
+                mt-10
+                hover:bg-green-700
+                transition'>
+              Dummy User
             </button>
 
             {/* <div
