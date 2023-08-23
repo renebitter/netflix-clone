@@ -6,15 +6,14 @@ React, Next.js, Typescript, Tailwind, Prisma, MongoDB, Next-Auth, SWR, bcrypt, a
 
 ### TODOS:
 
-- Add Dummy Login
+- Add login/register error page
 - Fix login issues (OAuth, login error message with empty creds., mongodb)
 - Finish diagram
 - Move index content to component (Input: rename to Auth.)
 - Replace lodash with vanilla JS (isEmpty, without)
 - Navbar: window.onscroll instead of addEventListener?
 - Replace axios with fetch or vice-versa
-- Global CSS classes. E.g.: "text-white"
-- Approximate CSS to real netflix (mobile, sizes, paddings, hover on menus)
+- Improve CSS (mobile, sizes, paddings, hover on menus)
 - Add video preview on hover
 - Add pages
 - Add search
