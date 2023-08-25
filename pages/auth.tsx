@@ -42,12 +42,6 @@ const Auth = () => {
     }
   }, []);
 
-  // const dummyLogin = () => {
-  //   setEmail('dummy@dummy.com');
-  //   setPassword('2234r234rfadsfvvcasdfg');
-  //   dummyCallback();
-  // };
-
   const register = useCallback(async () => {
     try {
       await axios.post('/api/register', {
