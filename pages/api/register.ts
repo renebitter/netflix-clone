@@ -1,5 +1,5 @@
 import bcrypt from 'bcrypt';
-import { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest, NextApiResponse } from 'next';
 import prisma from '@/lib/prismadb';
 
 export default async function handler(
